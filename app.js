@@ -13,6 +13,16 @@ const dbPassword = process.env.DB_PASSWORD
 app.get('/',(req,res)=>{
     res.status(200).json({msg:'bem vindo a nossa API!'})
 })
+//register user
+app.post('/auth/register', async(req,res)=>{
+    const {name,email,password,confirmpassword} = req.body
+    //validation
+    if(!name){
+        return res.status(422).json({msg:"O nome é obrigatório!"})
+
+    }
+})
+
 
 //tal caso é ultilizado quando a aplicaçao for full orientada ao banco oq nao tem necessidade.
 
